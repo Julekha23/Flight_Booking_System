@@ -1,0 +1,184 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Background */
+body {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  min-height: 100vh;
+  color: #f1f1f1;
+}
+
+/* Navbar */
+.navber {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.navber .logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffd700;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+a {
+  color: #f1f1f1;
+  margin-left: 25px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+a:hover {
+  color: #ffd700;
+  transform: translateY(-2px);
+}
+
+/* Container */
+.container {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+/* Glass Panels */
+.panel {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 25px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+  
+}
+
+/* Headings */
+h1, h2 {
+  color: #ffd700;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
+
+h3 {
+  color: #87ceeb;
+  margin-bottom: 10px;
+}
+
+/* Search Form */
+.search-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.search-form div {
+  flex: 1;
+  min-width: 220px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #f1f1f1;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+  transition: box-shadow 0.3s ease;
+}
+
+input::placeholder {
+  color: #ddd;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0 10px #ffd700;
+}
+
+.search-form button {
+  background: linear-gradient(135deg, #ffd700, #ffa500);
+  color: #333;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-form button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(255,215,0,0.4);
+}
+
+/* Flight Card */
+.flight-card {
+  border-left: 6px solid #87ceeb;
+}
+
+p {
+  margin: 10px 0;
+  color: #f1f1f1;
+}
+
+button {
+  background: linear-gradient(135deg, #43e97b, #38f9d7);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(56,249,215,0.4);
+}
+
+select {
+  width: 200px;              /* control width */
+  padding: 10px;             /* spacing inside */
+  border: 2px solid #3498db; /* blue border */
+  border-radius: 5px;        /* rounded corners */
+  background-color: #f9f9f9; /* light background */
+  font-size: 16px;           /* readable text */
+  color: #333;               /* dark text */
+  cursor: pointer;
+  transition: all 0.3s ease; /* smooth hover effect */
+}
+
+select:focus {
+  border-color: #2980b9;     /* darker blue when focused */
+  outline: none;             /* remove default outline */
+  box-shadow: 0 0 5px rgba(41, 128, 185, 0.5);
+}
+
+option {
+  padding: 10px;
+  background: #fff;
+  color: #333;
+}
+
+option:disabled {
+  color: #aaa;               /* greyed out for "Select a Seat" */
+}

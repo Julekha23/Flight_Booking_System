@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+{% block content %}
+<div class="container">
+    <div class="panel">
+        <h2>Login to SkyFlights</h2>
+        {% if error %}
+            <p class="error">{{error}}</p>
+        {% endif %}
+        <form action="" method="POST">
+            {% csrf_token %}
+            <label for="">Username:</label>
+            <input type="text" name="uname" required>
+            <br><br>
+            <label for="">Password:</label>
+            <input type="password" name="password" required>
+            <br><br>
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an Account ?   <a href="{%url 'register' %}">  Register</a></p>
+    </div>
+</div>
+{% endblock %}

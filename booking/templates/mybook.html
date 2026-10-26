@@ -1,0 +1,26 @@
+{% extends 'main.html' %}
+{% block content %}
+<h1>My Bookings</h1>
+<div class="container"></div>
+{% for i in data %}
+    <div class="panel">
+        <h3>{{i.flight.airline}}--{{i.flight.flight_number}}</h3>
+        <p>
+            {{i.flight.source}} -> {{i.flight.destination}}
+        </p>
+        <p>Passenger:{{i.passenger_name}}</p>
+        <p>Seat Number:{{i.seat_number}}</p>
+        <p>Date of booking:{{i.booking_date}}</p>
+        <br><br>
+        <form action="{% url 'cancel' i.id %}" method="POST">
+        {% csrf_token %}
+        <button type="submit">Cancel Booking</button>
+    </form>
+    </div>
+    {% empty %}
+    <div class="panel">
+        <p>You have not book any flight yet</p>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

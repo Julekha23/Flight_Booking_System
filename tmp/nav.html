@@ -1,0 +1,26 @@
+{% load static %}
+<!-- <div class="navber">
+    <a href="" class="logo">FBS</a>
+    <div class="nav-links">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="">My Bookings</a>
+        <a href="">Profile</a>
+        <a href="{% url 'register' %}">Register</a>
+        <a href="{% url 'login' %}">Login</a>
+    </div>
+</div> -->
+<div class="navber">
+    <a href="{% url 'home' %}" class="logo">Fight booking system</a>
+{% if request.user.is_authenticated %}
+    <div class="nav-links">
+    <a href="{% url 'mybookings' %}">My Booking</a>
+    <a href="{% url 'profile' %}">Profile</a>
+    <a href="{% url 'logout' %}">Logout</a>
+    </div>
+{% else %}
+    <div class="nav-links">
+    <a href="{% url 'login' %}">Login</a>
+    <a href="{% url 'register' %}">Register</a>
+    </div>
+{% endif %}
+</div>

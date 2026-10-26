@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="panel">
+        <h2>My Profile</h2>
+        <p><b>First Name :</b>{{request.user.first_name}}</p>
+        <p><b>Lasty Name :</b>{{request.user.last_name}}</p>
+        <p><b>Email Id:</b>{{request.user.email}}</p>
+        <p><b>Username:</b>{{request.user.username}}</p>
+
+        <a href="{% url 'logout' %}">Logout</a>
+    </div>
+</div>
+{% endblock %}

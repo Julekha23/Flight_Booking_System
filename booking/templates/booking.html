@@ -1,0 +1,33 @@
+{% extends 'main.html' %} 
+{% block content %}
+<div class="container">
+  <div class="panel">
+    <h2>Book You Flight</h2>
+    <h3>{{data.airline}}--{{data.flight_number}}</h3>
+    <p>
+      <strong>From: </strong>{{i.source}} <strong>To:</strong>{{i.destination}}
+    </p>
+    <p><b>Departure: </b>{{i.departure}}</p>
+    <p><b>Arrival:</b>{{i.arrival}}</p>
+    <p><b>Price:</b>{{i.price}}</p>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <label for="">Passenger Name:</label>
+        <input type="text" name="pname" id="" required>
+        <label for="">Seat Number:</label>
+        <select name="snum" id="">
+            <option value="" disabled>Select a Seat</option>
+            <option value="1A">1A</option>
+            <option value="1B">1B</option>
+            <option value="1C">1C</option>
+            <option value="2A">2A</option>
+            <option value="2B">2B</option>
+            <option value="2C">2C</option> 
+        </select>
+        <br>
+        <button type="submit">Confirm Booking</button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

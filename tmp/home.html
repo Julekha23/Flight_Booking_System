@@ -1,0 +1,58 @@
+{% extends 'main.html' %} 
+{% block content %}
+<div class="container">
+  <div class="panel">
+    <h1>Welcome to Flight Booking System</h1>
+    <p>Find Your Flight and plan your next Journey</p>
+    <h2>Search Flights</h2>
+    <form action="" method="GET">
+      <div class="search-form">
+        <div>
+          <label for="">From</label>
+          <input
+            type="text"
+            name="source"
+            placeholder="Enter Source City"
+            required
+          />
+        </div>
+        <div>
+          <label for="">To</label>
+          <input
+            type="text"
+            name="destination"
+            placeholder="Enter destination city"
+            required
+          />
+        </div>
+        <div>
+          <label for="">Departure</label>
+          <input type="date" name="departure" required />
+        </div>
+        <div>
+          <button type="submit">Search Flights</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  {% if request.GET.source %}
+  <h2>Available Flight</h2>
+  {% for i in fights %}
+  <div class="panel flight-card">
+  <h3>{{i.airline}}-{{i.flight_number}}</h3>
+  <p><strong>From: </strong>{{i.source}}  <strong>To:</strong>{{i.destination}}</p>
+  <p><b>Departure: </b>{{i.departure}}  </p>
+  <p><b>Arrival:</b>{{i.arrival}}</p>
+  <p><b>Price:</b>{{i.price}}</p>
+  <a href="{% url 'book' i.id %}">
+    <button type="submit">Book Now</button>
+  </a>
+  </div>
+  {% empty %}
+  <div class="panel">
+    <p>No Flights Found for Your Search. Try another route or date</p>
+  </div>
+  {% endfor %}
+  {% endif %}
+</div>
+{% endblock %}
