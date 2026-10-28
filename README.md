@@ -81,7 +81,7 @@ Follow these steps to run the project locally.
 ### 1. Clone the Repository
 
 ```bash
-git clone <your-github-repository-url>
+git clone https://github.com/Julekha23/Flight_Booking_System.git
 ```
 
 Navigate to the project directory:
